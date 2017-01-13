@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% load i18n %} {% load crispy_forms_tags %}
+
+{% block content %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<div class="col-sm-6 col-sm-offset-3">
+	<h2>
+		<strong class="text-align-center">Registrate Grátis!</strong>
+	</h2>
+	<form method="post" action="">
+		{% csrf_token %} {{ form|crispy }} <input class="btn btn-primary"
+			type="submit" value="{% trans 'Enviar' %}" />
+	</form>
+</div>
+
+{% endblock %}

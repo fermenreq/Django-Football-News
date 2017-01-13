@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block head_title %}BIENVENIDO |{% endblock%} 
+{% load static %} {%block content %}
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+	<div class="container">
+
+		<section class="jumbotron text-center">
+			<div class="container">
+				<h1 class="jumbotron-heading">Equipos de fútbol</h1>
+				<p class="lead text-muted">Mantente actualizado con la mejor web
+					de noticias de fútbol del país.</p>
+			</div>
+		</section>
+
+		<!-- Team Members Row -->
+		<div class="row">
+			{% for i in nombreEquipo %}
+			<div class="col-lg-4 col-sm-6 pull-center">
+				<a href="/noticias/{{i.id}}"><img
+					class="img-square img-responsive img-center"
+					src="../static/img/{{i.nombreEquipo}}.png" alt=""></a>
+				<h3>
+					{{i.nombreEquipo}} <small>F.C</small>
+				</h3>
+			</div>
+			{% endfor %}
+
+		</div>
+		<hr>
+	</div>
+	<hr>
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy;2017</p>
+			</div>
+			<!-- /.col-lg-12 -->
+		</div>
+		<!-- /.row -->
+	</footer>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.js' %}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src=" {% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

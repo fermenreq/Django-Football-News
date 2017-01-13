@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% load i18n %} 
+{% load crispy_forms_tags %}
+{% load static %} 
+
+
+
+{% block content %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static '/css/signin.css' %}" rel="stylesheet">
+<div class ="container">
+	<form class='form-signin' method="post" action=".">
+		<h2 class="form-signin-heading">Inicia Sesión</h2>
+			{% csrf_token %} {{ form|crispy}} 
+			<input class='btn btn-primary' type="submit" value="{% trans 'Iniciar sesión' %}" /> 
+			<input class='btn btn-primary' type="hidden" name="next" value="{{ next }}" />
+		<br><br>
+		<p>
+			{% trans "Has olvidado tu contraseña" %}? <a
+				href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!
+		</p>
+		<p>
+			{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!
+		</p>
+	</form>
+</div>
+{% endblock %}

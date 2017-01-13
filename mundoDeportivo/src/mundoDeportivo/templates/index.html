@@ -1,0 +1,82 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %} 
+{% block head_title %}BIENVENIDO |{% endblock %} {% load static %}
+
+<style>
+{% block style %}
+.jumbotron {
+	background-color: #57C640 !important;
+	color: white !important;
+}
+{% endblock %}
+</style>
+{% block jumbotron %}
+<br>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<div class='jumbotron'>
+	<div class='container'>
+		<div class='row'>
+			<div class=col-sm-5>
+				<h1>Noticias fútbol AII</h1>
+				<p>Bienvenido a tu blog de noticias deportivas.</p>
+				<p> 
+				{% if request.user.is_authenticated %} 
+						<a class="btn btn-lg btn-primary" href="/equipos" role="button">Entrar &raquo;</a>
+				 {% else %}
+					<a class="btn btn-lg btn-primary"  href="{% url 'auth_login'%}"
+						role="button">Entrar &raquo;</a>
+				{% endif %}
+				</p>
+			</div>
+			<div class='col-sm-7'>
+				<iframe width="500" height="315"
+					src="https://www.youtube.com/embed/fgsQ2TFOSdU?autoplay=1" frameborder="10"allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-square img-responsive img-center" src="../static/img/fotocv.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Fernando Méndez Requena</h2>
+          <p>Software Programmer.</p>
+          <p><a class="btn btn-lg btn-secondary" href="https://es.linkedin.com/in/fmendez1 " role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-square img-responsive img-center" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Sinhué Gutierrez Gomez</h2>
+          <p>Software Programmer.</p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+           <img class="img-square img-responsive img-center" src="../static/img/foto1.png" alt="Generic placeholder image" width="140" height="140">
+          <h2>Jaime Herrera Varo</h2>
+          <p>Software Programmer.</p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      <!-- START THE FEATURETTES -->
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Acceso Inteligente a la información. <span class="text-muted">Desarollado con mucho amor.</span></h2>
+          <p class="lead">Proyecto final de la asigntura AII. Dicho proyecto usa contenidos vistos a la largo del curso.</p>
+        </div>
+        <div class="col-md-5">
+          <p class='lead text-align-center'>
+			Creado con Django, Bootstrap &amp; FontAwesome <br>
+			<i class="fa fa-code fa-5x" aria-hidden="true" style="color: red"></i>
+		</p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+
