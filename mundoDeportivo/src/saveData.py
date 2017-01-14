@@ -11,7 +11,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.settings")
 django.setup()
 from mundoDeportivo.models import * 
 
-#url = 'http://as.com/tag/copa_america/a/'
 url = 'http://www.mundodeportivo.com'
 
 def scraping(url):
@@ -24,7 +23,6 @@ def scraping(url):
         entra = True
         paginaError= "CODIDO DE ERROR: "
         print paginaError,e.code
-        #tkMessageBox.showinfo("ERROR",paginaError)
         return scraping(url)
     except urllib2.URLError,e:
         paginaError="Ocurrió un error en la url. Comprueba si tienes conexión"
