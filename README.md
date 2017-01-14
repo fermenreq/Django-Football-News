@@ -26,4 +26,6 @@ January 14, 2017 - 01:01:57
 Django version 1.10.3, using settings 'src.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
+
+The Script call "SaveData.py" is the responsible to capturing the data and storing on the BD. Due to the large amount of data, we have modified the script's pagination value to a constant. If you want all the data, you must only comment the line. See SaveData.py script output
  
