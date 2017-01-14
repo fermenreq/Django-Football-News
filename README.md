@@ -1,6 +1,6 @@
 # Django-Football-News
 
-This academic project shows a simply web application.
+This is an academic project which shows a simply web application about football news
 
 The following requirements are mandatory to run this project:
 Python 2.7.12
